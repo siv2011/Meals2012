@@ -1,0 +1,11 @@
+<table>
+	<% @meals.each do |s| %>
+       <tr>
+       	<td><%=s.name%></td>
+       	<td><%=link_to s.restaurant, s.link%></td>
+       	<td><%=s.date%></td>
+       	<td><%=s.notes%></td>
+       </tr>
+	<% end %>
+</table>
+<%= button_to "Add A Lunch", action: 'new' %>

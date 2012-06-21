@@ -1,0 +1,14 @@
+<%= form_tag("/meals", method: "create") do %>
+  <br><%= label_tag(:q, "Team name") %>
+  <%= text_field_tag(:name) %> </br>
+  <br><%= label_tag(:q, "Restaurant name") %>
+  <%= text_field_tag(:rest_name) %> </br>
+  <br><%= select_date Date.today, prefix: :meal_date%>
+  <%= check_box_tag(:No_date) %>
+  <%= label_tag(:No_date_answer, "Date not confirmed yet") %> </br>
+  <br><%= label_tag(:q, "Selling strategy or selling process") %>
+  <%= text_area_tag(:notes) %> </br>
+  <br><%= label_tag(:q, "Link to restaurant's Yelp page") %>
+  <%= text_field_tag(:link_meal) %> </br>
+  <br><%= submit_tag("Add meal") %></br>
+<% end %>
