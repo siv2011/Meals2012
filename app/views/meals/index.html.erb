@@ -1,12 +1,29 @@
 <% provide(:title, 'List') %>
-<table>
+<table border="2" CELLPADDING="2" CELLSPACING="2" WIDTH="100%">
+	<tr>
+		<th> Name </th>
+		<th> Restaurant Name </th>
+		<th> Date </th>
+		<th> Some text </th>
+	</tr>
+	<% @count = 0 %>
 	<% @meals.each do |s| %>
-       <tr>
-       	<td><%=s.name%></td>
-       	<td><%=link_to s.restaurant, s.link%></td>
-       	<td><%=s.date%></td>
-       	<td><%=s.notes%></td>
+       <div class="row"> 
+       	<% if @count%2 == 0 %>
+       	<tr class="even">
+       		<% else %>
+       		<tr class="odd">
+       			<% end %>
+       	<td WIDTH="20%"><%=s.name%></td>
+       	<td WIDTH="20%"><%=link_to s.restaurant, s.link%></td>
+       	<td WIDTH="20%"><%="#{s.date.month}/#{s.date.day}" unless s.date.nil? %>
+       	</td>
+       	<td WIDTH="40%"><%=s.notes%></td>
        </tr>
+   </div>
+   <% @count += 1 %>
 	<% end %>
 </table>
-<%= button_to "Add A Lunch", action: 'new' %>
+<div id="addbutton">
+ <%= link_to "Add a deal now", 'meals/new', class: "btn btn-large btn-primary" %>
+</div>

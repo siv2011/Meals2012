@@ -11,7 +11,7 @@ def create
 	newmeal = Meal.new
 	newmeal.name = params[:name]
 	newmeal.restaurant = params[:rest_name]
-	year = params[:meal_date][:year].to_f
+	year = 2012
 	month = params[:meal_date][:month].to_f
 	day = params[:meal_date][:day].to_f
 	if params[:No_date] == "1"
@@ -24,7 +24,7 @@ def create
 	
 	newmeal.save
 
-	redirect_to new_meal_path
+	redirect_to meals_path
 end
 
 end

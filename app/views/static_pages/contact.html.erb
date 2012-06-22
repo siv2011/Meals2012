@@ -2,6 +2,6 @@
 <h1>Contact</h1>
 <p>
   Contact Boston Startup School about the sample app:
-  <a href="ssivakami@alum.mit.edu">Siv</a>
-  <a href="bejar37@gmail.com">Miguel</a>
+  <%= mail_to("ssivakami@alum.mit.edu", name = "Siv", html_options = {})%>
+  <%= mail_to("bejar37@gmail.com", name = "Miguel", html_options = {})%>
 </p>
